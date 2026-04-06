@@ -263,10 +263,11 @@ Settings → Environment に以下を追加:
 
 | 変数名 | 値 |
 |------|-----|
-| `DB_URL` | `jdbc:postgresql://[HOST]:[PORT]/postgres?sslmode=require` |
+| `JDBC_DATABASE_URL` | `jdbc:postgresql://[HOST]:[PORT]/postgres?sslmode=require` |
+| `DB_URL` | `jdbc:postgresql://[HOST]:[PORT]/postgres?sslmode=require` (互換用・どちらか1つでも可) |
 | `DB_USERNAME` | `postgres` |
 | `DB_PASSWORD` | `[SUPABASE_PASSWORD]` |
-| `SERVER_PORT` | `8080` |
+| `PORT` | `10000` (Render が自動注入する場合は設定不要) |
 | `SPRING_PROFILES_ACTIVE` | `prod` |
 | `FRONTEND_URL` | `https://<vercel-project>.vercel.app` |
 
