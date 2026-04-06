@@ -2,6 +2,8 @@ package com.example.settlement.controller;
 
 import com.example.settlement.dto.event.EventRequest;
 import com.example.settlement.dto.event.EventResponse;
+import com.example.settlement.dto.event.ParticipantAddRequest;
+import com.example.settlement.dto.member.MemberResponse;
 import com.example.settlement.service.EventService;
 import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
@@ -44,5 +46,22 @@ public class EventController {
     @ResponseStatus(HttpStatus.NO_CONTENT)
     public void deleteEvent(@PathVariable Long id) {
         eventService.delete(id);
+    }
+
+    @GetMapping("/{id}/participants")
+    public List<MemberResponse> getParticipants(@PathVariable Long id) {
+        return eventService.getParticipants(id);
+    }
+
+    @PostMapping("/{id}/participants")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void addParticipants(@PathVariable Long id, @Valid @RequestBody ParticipantAddRequest request) {
+        eventService.addParticipants(id, request.memberIds());
+    }
+
+    @DeleteMapping("/{id}/participants/{memberId}")
+    @ResponseStatus(HttpStatus.NO_CONTENT)
+    public void removeParticipant(@PathVariable Long id, @PathVariable Long memberId) {
+        eventService.removeParticipant(id, memberId);
     }
 }
