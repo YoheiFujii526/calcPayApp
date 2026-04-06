@@ -62,6 +62,24 @@ docker compose ps
 docker compose logs backend --tail=100
 ```
 
+### 本番デプロイ（Render + Supabase）で詰まった点
+
+1. `UnknownHostException: db.<project-ref>.supabase.co`
+- 原因: DBホスト名の設定ミス、または接続情報の形式ミス
+- 解決: Supabase の接続情報を再取得し、`JDBC_DATABASE_URL` を `jdbc:postgresql://...` 形式で設定
+
+2. `No open ports detected`
+- 原因: Spring Boot がDB接続エラーで起動前に終了していた
+- 解決: DB接続エラーを解消後、Render 側の `PORT` を使ってアプリが正常起動することを確認
+
+3. `Found non-empty schema(s) "public" but no schema history table`
+- 原因: 既存スキーマがあるDBに Flyway 履歴テーブルが無い
+- 解決: Render 環境変数に `SPRING_FLYWAY_BASELINE_ON_MIGRATE=true` を追加して初期化
+
+4. Vercel で環境変数追加時に「invalid characters」エラー
+- 原因: `Key` に URL を入れてしまっていた
+- 解決: `Key=VITE_API_BASE_URL`、`Value=https://<render-domain>/api` で設定
+
 ## ポートフォリオ向けの開発方針
 
 このリポジトリでは、実装過程が追えるように以下を徹底しています。
