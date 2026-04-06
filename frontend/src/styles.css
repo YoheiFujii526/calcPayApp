@@ -1,0 +1,16 @@
+:root {
+  font-family: "Noto Sans JP", "Hiragino Sans", sans-serif;
+  color: #1f2937;
+  background: linear-gradient(140deg, #f4fbf7 0%, #f9f5ee 100%);
+}
+
+body {
+  margin: 0;
+}
+
+.layout {
+  max-width: 960px;
+  margin: 0 auto;
+  min-height: 100vh;
+  padding: 2rem 1rem;
+}
