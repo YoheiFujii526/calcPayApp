@@ -13,38 +13,38 @@
 
 ### 1. `feat/backend-foundation`
 
-- [ ] Spring Boot プロジェクトの雛形作成
-- [ ] Docker Compose（frontend / backend / postgres）追加
-- [ ] Flyway 初期マイグレーションでテーブル作成
-- [ ] 共通例外ハンドラと基本設定追加
+- [x] Spring Boot プロジェクトの雛形作成
+- [x] Docker Compose（frontend / backend / postgres）追加
+- [x] Flyway 初期マイグレーションでテーブル作成
+- [x] 共通例外ハンドラと基本設定追加
 
 ### 2. `feat/member-event-api`
 
-- [ ] Member Entity / Repository / Service / Controller
-- [ ] Event Entity / Repository / Service / Controller
-- [ ] EventParticipant 追加・削除 API
-- [ ] バリデーションと DTO の整備
+- [x] Member Entity / Repository / Service / Controller
+- [x] Event Entity / Repository / Service / Controller
+- [x] EventParticipant 追加・削除 API
+- [x] バリデーションと DTO の整備
 
 ### 3. `feat/expense-repayment-settlement-api`
 
-- [ ] Expense / ExpenseTarget CRUD API
-- [ ] Repayment CRUD API
-- [ ] SettlementService（差額計算 + 支払い提案）
-- [ ] Settlement API の実装
+- [x] Expense / ExpenseTarget CRUD API
+- [x] Repayment CRUD API
+- [x] SettlementService（差額計算 + 支払い提案）
+- [x] Settlement API の実装
 
 ### 4. `feat/frontend-vue`
 
-- [ ] Vue + Vite フロントエンド初期化
-- [ ] メンバー一覧・登録 UI
-- [ ] イベント一覧・詳細 UI
-- [ ] 支出/返済登録 UI
-- [ ] 精算結果表示 UI
+- [x] Vue + Vite フロントエンド初期化
+- [x] メンバー一覧・登録 UI
+- [x] イベント一覧・詳細 UI
+- [x] 支出/返済登録 UI
+- [x] 精算結果表示 UI
 
 ### 5. `feat/docs-and-sample`
 
-- [ ] セットアップ手順の README 整備
-- [ ] API 使用例の記載
-- [ ] ポートフォリオ観点の設計意図を追記
+- [x] セットアップ手順の README 整備
+- [x] API 使用例の記載
+- [x] ポートフォリオ観点の設計意図を追記
 
 ## 実装順序
 
