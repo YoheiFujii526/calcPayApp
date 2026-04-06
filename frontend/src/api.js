@@ -31,17 +31,23 @@ export const memberApi = {
 export const eventApi = {
   list: () => request('/events'),
   create: (payload) => request('/events', { method: 'POST', body: JSON.stringify(payload) }),
-  detail: (id) => request(`/events/${id}`)
+  update: (id, payload) => request(`/events/${id}`, { method: 'PUT', body: JSON.stringify(payload) }),
+  detail: (id) => request(`/events/${id}`),
+  remove: (id) => request(`/events/${id}`, { method: 'DELETE' })
 }
 
 export const expenseApi = {
   list: (eventId) => request(`/events/${eventId}/expenses`),
-  create: (eventId, payload) => request(`/events/${eventId}/expenses`, { method: 'POST', body: JSON.stringify(payload) })
+  create: (eventId, payload) => request(`/events/${eventId}/expenses`, { method: 'POST', body: JSON.stringify(payload) }),
+  update: (id, payload) => request(`/expenses/${id}`, { method: 'PUT', body: JSON.stringify(payload) }),
+  remove: (id) => request(`/expenses/${id}`, { method: 'DELETE' })
 }
 
 export const repaymentApi = {
   list: (eventId) => request(`/events/${eventId}/repayments`),
-  create: (eventId, payload) => request(`/events/${eventId}/repayments`, { method: 'POST', body: JSON.stringify(payload) })
+  create: (eventId, payload) => request(`/events/${eventId}/repayments`, { method: 'POST', body: JSON.stringify(payload) }),
+  update: (id, payload) => request(`/repayments/${id}`, { method: 'PUT', body: JSON.stringify(payload) }),
+  remove: (id) => request(`/repayments/${id}`, { method: 'DELETE' })
 }
 
 export const settlementApi = {

@@ -9,10 +9,12 @@ body {
 }
 
 .layout {
-  max-width: 980px;
+  max-width: 1080px;
   margin: 0 auto;
   min-height: 100vh;
   padding: 2rem 1rem 3rem;
+  display: grid;
+  gap: 1rem;
 }
 
 .hero h1 {
@@ -29,12 +31,18 @@ body {
 .form-grid {
   display: grid;
   gap: 0.7rem;
-  grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
   align-items: center;
   margin-bottom: 1rem;
 }
 
+.inline {
+  display: flex;
+  gap: 0.6rem;
+}
+
 input,
+select,
 button {
   font: inherit;
   padding: 0.56rem 0.65rem;
@@ -79,11 +87,60 @@ td {
   gap: 0.4rem;
 }
 
+.event-list {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin-bottom: 0.8rem;
+}
+
+.event-chip {
+  background: #dae6f2;
+  color: #102a43;
+}
+
+.event-chip.active {
+  background: #1f845a;
+  color: #fff;
+}
+
+.grid2 {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: 1fr 1fr;
+}
+
+.targets {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.plus {
+  color: #157347;
+}
+
+.minus {
+  color: #a61e4d;
+}
+
 .error {
   color: #c53232;
 }
 
-@media (max-width: 700px) {
+ul {
+  padding-left: 1rem;
+}
+
+li {
+  margin: 0.4rem 0;
+}
+
+@media (max-width: 900px) {
+  .grid2 {
+    grid-template-columns: 1fr;
+  }
+
   .actions {
     flex-direction: column;
   }
