@@ -47,6 +47,21 @@ docker compose up --build
 - Backend: `http://localhost:8080`
 - Postgres: `localhost:5432`
 
+## トラブルシュート
+
+### 画面に `初期データ取得に失敗: Failed to fetch` と表示される
+
+- 原因例: backend コンテナが起動失敗している
+- 本リポジトリで発生した事例: Flyway が PostgreSQL 16 を認識できず起動失敗
+- 対応: `backend/build.gradle` に `org.flywaydb:flyway-database-postgresql` を追加済み
+
+確認コマンド:
+
+```bash
+docker compose ps
+docker compose logs backend --tail=100
+```
+
 ## ポートフォリオ向けの開発方針
 
 このリポジトリでは、実装過程が追えるように以下を徹底しています。
