@@ -9,9 +9,16 @@ public class WebConfig implements WebMvcConfigurer {
 
     @Override
     public void addCorsMappings(CorsRegistry registry) {
-        registry.addMapping("/api/**")
-                .allowedOrigins("http://localhost:5173")
+        String frontendUrl = System.getenv("FRONTEND_URL");
+        
+        registry.addMapping("/**")
+                .allowedOrigins(
+                    frontendUrl != null ? frontendUrl : "http://localhost:5173",
+                    "http://localhost:5173"
+                )
                 .allowedMethods("GET", "POST", "PUT", "DELETE", "OPTIONS")
-                .allowedHeaders("*");
+                .allowedHeaders("*")
+                .allowCredentials(true)
+                .maxAge(3600);
     }
 }
