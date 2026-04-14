@@ -3,6 +3,8 @@
 研究室イベント向けの精算管理アプリです。  
 「メンバー管理」「イベント管理」「支出/返済登録」「最終精算計算」を行います。
 
+url→https://calc-pay-app.vercel.app/
+
 ## 技術スタック
 
 - Frontend: Vue 3 + Vite
